@@ -1,6 +1,6 @@
 package com.example.moshiparsingdemo.ui.parsers.response
 
+import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
-@JsonClass(generateAdapter = true)
-data class EmployeesResponse(val results: List<Employee>)
+data class EmployeesResponse(@Json(name = "results") val results: List<Employee>)

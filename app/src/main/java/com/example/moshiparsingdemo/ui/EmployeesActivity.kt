@@ -3,7 +3,6 @@ package com.example.moshiparsingdemo.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.example.moshiparsingdemo.R
 import com.example.moshiparsingdemo.ui.models.EmployeeViewModel
@@ -20,7 +19,7 @@ class EmployeesActivity : AppCompatActivity() {
     }
 
     private fun initLayout() {
-
+        fetchEmployees()
     }
 
     fun fetchEmployees() {
