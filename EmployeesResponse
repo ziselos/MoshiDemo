@@ -1,0 +1,36 @@
+{
+"results":
+[
+  { "firstName":"John",
+    "lastName":"Doe",
+    "age":28,
+    "imageUrl":"https://picsum.photos/200",
+    "job":{
+        "title":"Android Developer",
+        "salary":1500,
+        "address":"St. Jonson Street"
+    }
+  },
+  { "firstName":"Anna",
+    "lastName":"Smith",
+    "age":31,
+    "imageUrl":"https://picsum.photos/200",
+    "job":{
+        "title":"IOS Developer",
+        "salary":1600,
+        "address":"Manhatan Street"
+    }
+  },
+  { "firstName":"Peter",
+    "lastName":"Jones",
+    "age":30,
+    "imageUrl":"https://picsum.photos/200",
+    "job":{
+        "title":"Dev Ops",
+        "salary":1800,
+        "address":"16th Avenue"
+    }
+  }
+]
+
+}
