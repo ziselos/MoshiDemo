@@ -1,7 +1,8 @@
 package com.example.moshiparsingdemo.ui.parsers.response
 
-import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
-data class Job(@Json(name = "title")val title: String? = null,
-               @Json(name = "salary")val salary : Double? = null,
-               @Json(name = "address")val address: String? = null)
+@JsonClass(generateAdapter = true)
+data class Job(val title: String? = null,
+               val salary : Double? = null,
+               val address: String? = null)
