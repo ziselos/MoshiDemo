@@ -37,9 +37,9 @@ class EmployeesActivity : AppCompatActivity() {
         employeeViewModel.getEmployees()
 
         employeeViewModel.employessLiveData.observe(this, Observer {employeeList ->
-//            val list = employeeList.map { EmployeeModel(it.firstName,it.lastName,it.age,it.imageUrl,it.job?.toModel()) }.toMutableList()
-//            employeesRecyclerViewAdapter.setEmployeeList(list)
-//            employeesRecyclerView.adapter = employeesRecyclerViewAdapter
+            val list = employeeList.map { EmployeeModel(it.firstName,it.lastName,it.age,it.imageUrl,it.job?.toModel()) }.toMutableList()
+            employeesRecyclerViewAdapter.setEmployeeList(list)
+            employeesRecyclerView.adapter = employeesRecyclerViewAdapter
             Timber.d("Moshi Demo -> employess list %s", employeeList[0].firstName)
 
         })

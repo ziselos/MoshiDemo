@@ -35,7 +35,7 @@ object MoshiDemoFactory {
     fun retrofit(): Retrofit = Retrofit.Builder()
         .client(moshiClient)
         .baseUrl("http://www.mocky.io/v2/")
-        .addConverterFactory(MoshiConverterFactory.create())
+        .addConverterFactory(MoshiConverterFactory.create().asLenient())
         .addCallAdapterFactory(CoroutineCallAdapterFactory())
         .build()
 
