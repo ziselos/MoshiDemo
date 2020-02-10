@@ -1,6 +1,9 @@
 package com.example.moshiparsingdemo.ui.network.api
 
+import com.example.moshiparsingdemo.ui.adapters.NullToEmptyStringAdapter
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -31,11 +34,15 @@ object MoshiDemoFactory {
         .addInterceptor(authInterceptor)
         .build()
 
+    //in case we want tio handle null or missing fields on api responses
+    val moshi = Moshi.Builder().add(NullToEmptyStringAdapter())
+        .add(KotlinJsonAdapterFactory())
+        .build()
 
     fun retrofit(): Retrofit = Retrofit.Builder()
         .client(moshiClient)
         .baseUrl("http://www.mocky.io/v2/")
-        .addConverterFactory(MoshiConverterFactory.create().asLenient())
+        .addConverterFactory(MoshiConverterFactory.create(moshi).asLenient())
         .addCallAdapterFactory(CoroutineCallAdapterFactory())
         .build()
 
